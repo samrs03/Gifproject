@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" id="body">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap"
+      rel="stylesheet"
+    />
+    <title>GifOS</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-bar">
+        <p>
+          ¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número
+          de visitas: 12.765.803
+        </p>
+      </div>
+      <nav>
+        <a class="gifos-image" href="/"
+          ><img src="./asset/gifOF_logo.png" alt="Logo GifOS"
+        /></a>
+        <ul class="menu">
+          <li class="create-gifos"><a href="#">Crear Guifos</a></li>
+          <li class="choose-theme"><a href="#">Elegir tema</a></li>
+          <li class="down-arrow" id="down-arrow">
+            <a href=""><img src="./asset/dropdown.svg" alt="" /></a>
+          </li>
+          <li class="text-button"><a href="#">Mis Guifos</a></li>
+        </ul>
+        <div class="theme-options" id="theme-option">
+          <div class="theme-day" id="theme-day">
+            <p class="day-text" id="day-text">Sailor Day</p>
+          </div>
+          <div class="theme-night" id="theme-night">
+            <p class="night-text" id="night-text">Sailor Night</p>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <section class="search-box">
+      <div class="search-container">
+        <p>Buscar</p>
+      </div>
+      <div class="form-box">
+        <form action="">
+          <input
+            type="text"
+            placeholder="Busca gifs, hashtags, temas, busca lo que quieras…"
+          />
+          <button>
+            <img src="./asset/lupa_inactive.svg" alt="" />
+            <p>Buscar</p>
+          </button>
+        </form>
+      </div>
+    </section>
+    <section id="suggest">
+      <div class="suggest-box">
+        <h2>Hoy te sugerimos:</h2>
+      </div>
+      <div id="suggest-container">
+        <div class="suggest-container-gifbox">
+          <p></p>
+          <div class="suggest-gifbox-img"><a href="">Ver más...</a></div>
+        </div>
+        <div class="suggest-container-gifbox">
+          <p></p>
+          <div class="suggest-gifbox-img"><a href="">Ver más...</a></div>
+        </div>
+        <div class="suggest-container-gifbox">
+          <p></p>
+          <div class="suggest-gifbox-img"><a href="">Ver más...</a></div>
+        </div>
+        <div class="suggest-container-gifbox">
+          <p></p>
+          <div class="suggest-gifbox-img"><a href="">Ver más...</a></div>
+        </div>
+      </div>
+    </section>
+    <section id="trends">
+      <h2>Tendencias:</h2>
+    </section>
+    <script src="./js/functions.js"></script>
+    <script src="./js/theme_logic.js"></script>
+  </body>
+</html>
