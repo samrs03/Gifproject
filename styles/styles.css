@@ -328,4 +328,14 @@ section .suggest-box h2 {
   color: #110038;
   letter-spacing: 0;
 }
+
+.hola1 {
+  width: 500px;
+  height: 500px;
+}
+
+.hola1 .hola2 {
+  width: 100%;
+  height: 100%;
+}
 /*# sourceMappingURL=styles.css.map */
