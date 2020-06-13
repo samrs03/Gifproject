@@ -23,21 +23,26 @@
           ><img src="./asset/gifOF_logo.png" alt="Logo GifOS" id="logo"
         /></a>
         <ul class="menu">
-          <li class="create-gifos"><a href="#">Crear Guifos</a></li>
-          <li class="choose-theme"><a href="#">Elegir tema</a></li>
+          <li class="create-gifos" id="create-gifos-box"><a href="#" id ="create-gifos-text">Crear Guifos</a></li>
+          <li class="choose-theme" id="choose-theme-box"><a href="#" id ="choose-theme-text">Elegir tema</a></li>
           <li class="down-arrow" id="down-arrow">
-            <a href=""><img src="./asset/dropdown.svg" alt="" /></a>
+            <img
+              src="./asset/dropdown.svg"
+              alt="dropdown image"
+              class="dropdown-image"
+              id = "dropdown-image"
+            />
           </li>
-          <li class="text-button"><a href="#">Mis Guifos</a></li>
+          <li class="text-button"><a href="#" id = "mygif-text">Mis Guifos</a></li>
         </ul>
-        <div class="theme-options" id="theme-option">
-          <div class="theme-day" id="theme-day">
+        <ul class="theme-options" id="theme-option">
+          <li class="theme-day" id="theme-day">
             <p class="day-text" id="day-text">Sailor Day</p>
-          </div>
-          <div class="theme-night" id="theme-night">
+          </li>
+          <li class="theme-night" id="theme-night">
             <p class="night-text" id="night-text">Sailor Night</p>
-          </div>
-        </div>
+          </li>
+        </ul>
       </nav>
     </header>
     <section class="search-box">
@@ -57,36 +62,53 @@
         </form>
       </div>
     </section>
-    <section id="suggest">
+    <section 
+    class = "suggest">
       <div class="suggest-box">
         <h2>Hoy te sugerimos:</h2>
       </div>
-      <div id="suggest-container">
+      <div id="suggest-container" class = 'suggest-container'>
         <div class="suggest-container-gifbox">
-          <p></p>
-          <div class="suggest-gifbox-img"><a href="">Ver más...</a></div>
+            <p>#Charlie&Snoopy<img src="./asset/button3.svg" alt="" class="close-button-1"></p>        
+          <div class="suggest-gifbox-img"><img id="suggest-gif-1" src="" alt="" /><a href="">Ver más...</a></div>
         </div>
         <div class="suggest-container-gifbox">
-          <p></p>
-          <div class="suggest-gifbox-img"><a href="">Ver más...</a></div>
+          <p>#Gansta<img src="./asset/button3.svg" alt="" class="close-button-2"></p>
+          <div class="suggest-gifbox-img"><img id="suggest-gif-2" src="" alt="" /><a href="">Ver más...</a></div>
         </div>
         <div class="suggest-container-gifbox">
-          <p></p>
-          <div class="suggest-gifbox-img"><a href="">Ver más...</a></div>
+          <p>#CharlieUpSet<img src="./asset/button3.svg" alt="" class="close-button-3"></p>
+          <div class="suggest-gifbox-img"><img id="suggest-gif-3" src="" alt="" /><a href="">Ver más...</a></div>
         </div>
         <div class="suggest-container-gifbox">
-          <p></p>
-          <div class="suggest-gifbox-img"><a href="">Ver más...</a></div>
+          <p>#CharlieChristmas<img src="./asset/button3.svg" alt="" class='close-button-4'></p>
+          <div class="suggest-gifbox-img"><img id="suggest-gif-4" src="" alt="" /><a href="">Ver más...</a></div>
         </div>
       </div>
     </section>
-    <section id="trends">
-      <h2>Tendencias:</h2>
+    <section id="trend" class="trend">
+      <div class ="trend-box">
+        <h2>Tendencias:</h2>
+      </div>
+      <div class="trend-gifs" id ="trends-gifs">
+        <img src="" alt="" id="trend-gif-image-1">
+        <img src="" alt="" id="trend-gif-image-2">
+        <img src="" alt="" id="trend-gif-image-3">
+        <img src="" alt="" id="trend-gif-image-4">
+        <img src="" alt="" id="trend-gif-image-5">
+        <img src="" alt="" id="trend-gif-image-6">
+        <img src="" alt="" id="trend-gif-image-7">
+        <img src="" alt="" id="trend-gif-image-8">
+        <img src="" alt="" id="trend-gif-image-9">
+        <img src="" alt="" id="trend-gif-image-10">
+        <img src="" alt="" id="trend-gif-image-11">
+        <img src="" alt="" id="trend-gif-image-12">
+      </div>
+
     </section>
-    <div class="hola1">
-      <img src="" alt="" class="hola2" id="nuevaprueba" />
-    </div>
+    <script src = "./js/variables.js"></script>
     <script src="./js/functions.js"></script>
     <script src="./js/theme_logic.js"></script>
+    <script src="js/api.js"></script>
   </body>
 </html>

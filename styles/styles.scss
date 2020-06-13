@@ -10,11 +10,7 @@
 @import "_interactive-section.scss";
 @import "_search-section.scss";
 @import "_suggest-section.scss";
-.hola1 {
-  width: 500px;
-  height: 500px;
-  .hola2 {
-    width: 100%;
-    height: 100%;
-  }
+@import "_trend-section.scss";
+body {
+  background: #FFF4FD;
 }

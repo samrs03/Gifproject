@@ -28,11 +28,6 @@ header {
           letter-spacing: 0;
           line-height: 18px;
           text-align: center;
-          img {
-            width: 33%;
-            margin-left: 30%;
-            margin-top: 49%;
-          }
         }
       }
       .create-gifos,
@@ -68,6 +63,11 @@ header {
       .down-arrow {
         width: 2.5%;
         height: 36px;
+        .dropdown-image {
+          width: 33%;
+          margin-left: 30%;
+          margin-top: 49%;
+        }
       }
       .text-button {
         margin-top: 53px;
