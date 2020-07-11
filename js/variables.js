@@ -30,3 +30,8 @@ const trendGif9 = document.getElementById('trend-gif-image-9');
 const trendGif10 = document.getElementById('trend-gif-image-10');
 const trendGif11 = document.getElementById('trend-gif-image-11');
 const trendGif12 = document.getElementById('trend-gif-image-12');
+
+const input_box = document.getElementById('input-search');
+const first_search = document.getElementById('first-search-p-tag');
+const second_search = document.getElementById('second-search-p-tag');
+const third_search = document.getElementById('third-search-p-tag');

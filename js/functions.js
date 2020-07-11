@@ -1,3 +1,7 @@
+async function gettingInformation(url) {
+	const testing = await fetch(url);
+	return testing.json();
+}
 function showingMenu() {
 	if (menuTheme.style.display == 'none') {
 		menuTheme.style.display = 'flex';
@@ -30,4 +34,16 @@ function darkTheme() {
   chooseThemeText.style.color = '#FFFFFF';
   myGifText.style.color = '#FFFFFF';
   gifosLogo.setAttribute('src','./asset/gifOf_logo_dark.png');
+}
+
+function tryingit () {
+	const suggestedTextURL = 'https://api.giphy.com/v1/gifs/search/tags?api_key=qsOjAmeDhQKoL3IW1Cnaty7Rayav17Ix&limit=2&q=' + input_box.value;
+	gettingInformation(suggestedTextURL).then(result => {
+		first_search.innerText = input_box.value
+		second_search.innerText = result.data[0].name
+		third_search.innerText = result.data[1].name
+		console.log(result.data)
+	}).catch(e => {
+		console.log(e)
+	})
 }

@@ -301,6 +301,64 @@ header nav .theme-options .theme-night .night-text {
   line-height: 18px;
 }
 
+.search-box .search-suggest-text {
+  background: #E6E6E6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+          box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+  height: 160px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.search-box .first-search {
+  background: #F0F0F0;
+  border: 1px solid #808080;
+  -webkit-box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+          box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+  height: 34px;
+  margin-left: 10px;
+  width: 85%;
+}
+
+.search-box .first-search p {
+  margin: 1% 0 0 1%;
+}
+
+.search-box .second-search {
+  background: #F0F0F0;
+  border: 1px solid #808080;
+  -webkit-box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+          box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+  height: 34px;
+  margin-left: 10px;
+  width: 85%;
+}
+
+.search-box .second-search p {
+  margin: 1% 0 0 1%;
+}
+
+.search-box .third-search {
+  background: #F0F0F0;
+  border: 1px solid #808080;
+  -webkit-box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+          box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+  height: 34px;
+  margin-left: 10px;
+  width: 85%;
+}
+
+.search-box .third-search p {
+  margin: 1% 0 0 1%;
+}
+
 .suggest {
   margin-top: 64px;
 }

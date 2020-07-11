@@ -2,10 +2,6 @@ apiKey = 'api_key=qsOjAmeDhQKoL3IW1Cnaty7Rayav17Ix';
 SuggestGifs =
 	'https://api.giphy.com/v1/gifs/search?api_key=qsOjAmeDhQKoL3IW1Cnaty7Rayav17Ix&q=charlieBrown&limit=4&offset=0&rating=G&lang=en';
 trendGifs = 'https://api.giphy.com/v1/gifs/trending?api_key=qsOjAmeDhQKoL3IW1Cnaty7Rayav17Ix&limit=12&rating=G';
-async function gettingInformation(url) {
-	const testing = await fetch(url);
-	return testing.json();
-}
 gettingInformation(SuggestGifs)
 	.then((result) => {
 		suggestGif1.setAttribute('src', result.data[0].images.preview_webp.url);
