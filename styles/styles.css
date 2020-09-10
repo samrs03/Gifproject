@@ -26,6 +26,7 @@ header nav {
 header nav .gifos-image {
   margin-left: 6.3%;
   margin-top: 35px;
+  z-index: 1;
 }
 
 header nav ul {
@@ -123,6 +124,10 @@ header nav ul .text-button {
 
 header nav ul .text-button :hover {
   border: 1.5px dotted #110038;
+}
+
+header nav ul .text-button a {
+  cursor: pointer;
 }
 
 header nav .theme-options {
@@ -292,7 +297,7 @@ header nav .theme-options .theme-night .night-text {
 }
 
 .search-box .form-box button p {
-  margin-top: 10%;
+  margin-top: 8%;
   margin-left: 5%;
   font-family: "Chakra Petch", sans-serif;
   font-size: 16px;
@@ -306,9 +311,7 @@ header nav .theme-options .theme-night .night-text {
   -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
           box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
   height: 160px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;

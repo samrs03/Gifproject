@@ -19,7 +19,7 @@
         </p>
       </div>
       <nav>
-        <a class="gifos-image" href="/"
+        <a class="gifos-image" href="/Acamica/Gifproject/"
           ><img src="./asset/gifOF_logo.png" alt="Logo GifOS" id="logo"
         /></a>
         <ul class="menu">
@@ -33,7 +33,7 @@
               id = "dropdown-image"
             />
           </li>
-          <li class="text-button"><a href="#" id = "mygif-text">Mis Guifos</a></li>
+          <li class="text-button"><a role="button" id = "mygif-text">Mis Guifos</a></li>
         </ul>
         <ul class="theme-options" id="theme-option">
           <li class="theme-day" id="theme-day">
@@ -49,33 +49,33 @@
       <div class="search-container">
         <p>Buscar</p>
       </div>
-      <div class="form-box">
+      <div class="form-box" id="form-box">
         <form action="">
           <input
             type="text"
             placeholder="Busca gifs, hashtags, temas, busca lo que quieras…"
             id ="input-search"
           />
-          <button>
+          <button class ="search-button" id = "search-button">
             <img src="./asset/lupa_inactive.svg" alt="" />
             <p>Buscar</p>
           </button>
         </form>
       </div>
-      <div class ='search-suggest-text'>  
-        <div class='first-search' >
+      <div class ='search-suggest-text' id ="search-suggest-text">  
+        <div class='first-search' id="first-search-div">
           <p id="first-search-p-tag">hola</p>
         </div>
-        <div class ='second-search' >
+        <div class ='second-search' id ="second-search-div">
         <p id="second-search-p-tag">hola</p>
         </div>
-        <div class='third-search' >
+        <div class='third-search' id="third-search-div">
           <p id="third-search-p-tag">hola</p>
         </div>
       </div>
     </section>
     <section 
-    class = "suggest">
+    class = "suggest" id ="suggest-section">
       <div class="suggest-box">
         <h2>Hoy te sugerimos:</h2>
       </div>
@@ -99,7 +99,7 @@
       </div>
     </section>
     <section id="trend" class="trend">
-      <div class ="trend-box">
+      <div class ="trend-box" id="trend-box"</div>
         <h2>Tendencias:</h2>
       </div>
       <div class="trend-gifs" id ="trends-gifs">
@@ -120,7 +120,7 @@
     </section>
     <script src = "./js/variables.js"></script>
     <script src="./js/functions.js"></script>
-    <script src="./js/theme_logic.js"></script>
+    <script src="./js/listeners.js"></script>
     <script src="js/api.js"></script>
   </body>
 </html>
