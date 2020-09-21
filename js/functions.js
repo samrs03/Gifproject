@@ -10,41 +10,43 @@ function showingMenu() {
   }
 }
 function dayTheme() {
-  sailorDay.style.background = "#FFF4FD";
-  sailorNight.style.background = "#F0F0F0";
-  sailorNightText.style.color = "#110038";
-  body[0].style.background = "#FFF4FD";
-  formBox.style.background = '#E6E6E6';
-  searchButton.style.background = '#E6E6E6';
+  stylesTag.setAttribute('href','./styles/light/styles.css');
   searchButton.children[0].setAttribute('src','./asset/lupa_inactive.svg');
-  searchButton.children[1].style.color = "#B4B4B4";
-  createGifosButton.style.background = "#F7C9F3";
-  chooseThemeButton.style.background = "#F7C9F3";
-  menuThemeTrigger.style.background = "#F7C9F3";
-  createGifosText.style.color = "#110038";
-  chooseThemeText.style.color = "#110038";
-  myGifText.style.color = "#110038";
   gifosLogo.setAttribute("src", "./asset/gifOF_logo.png");
   darkIndicator = false;
-}
+};
 function darkTheme() {
-  sailorDay.style.background = "#F0F0F0";
-  sailorNight.style.background = "#2E32FB";
-  sailorNightText.style.color = "#FFFFFF";
-  body[0].style.background = "#110038";
-  formBox.style.background = "#B4B4B4";
-  searchButton.style.background = "#B4B4B4";
+  stylesTag.setAttribute("href","./styles/dark/styles.css")
   searchButton.children[0].setAttribute('src','./asset/combined_shape.svg');
-  searchButton.children[1].style.color = "#8F8F8F";
-  createGifosButton.style.background = "#EE3EFE";
-  chooseThemeButton.style.background = "#EE3EFE";
-  menuThemeTrigger.style.background = "#EE3EFE";
-  createGifosText.style.color = "#FFFFFF";
-  chooseThemeText.style.color = "#FFFFFF";
-  myGifText.style.color = "#FFFFFF";
   gifosLogo.setAttribute("src", "./asset/gifOF_logo_dark.png");
   darkIndicator = true;
-}
+};
+
+SuggestGifs =
+	'https://api.giphy.com/v1/gifs/search?api_key=qsOjAmeDhQKoL3IW1Cnaty7Rayav17Ix&q=charlieBrown&limit=4&offset=0&rating=G&lang=en';
+trendGifs = 'https://api.giphy.com/v1/gifs/trending?api_key=qsOjAmeDhQKoL3IW1Cnaty7Rayav17Ix&limit=12&rating=G';
+gettingInformation(SuggestGifs)
+	.then((result) => {
+		for (let i=0; i < suggestGifContainer.children.length; i++) {
+			suggestGifContainer.children[i].children[1].children[0].setAttribute('src',result.data[i].images.fixed_width.url);
+			suggestGifContainer.children[i].children[1].children[0].style.width = '100%';
+			suggestGifContainer.children[i].children[1].children[0].style.height = '299px';
+		};
+	})
+	.catch((error) => {
+		console.log(error);
+	});
+gettingInformation(trendGifs)
+	.then((result) => {
+		for (let i=0; i < trendGifContainer.children.length; i ++) {
+			trendGifContainer.children[i].setAttribute('src',result.data[i].images.fixed_width.url);
+			trendGifContainer.children[i].style.width = '30%';
+			trendGifContainer.children[i].style.marginBottom = '10px';
+		};
+	})
+	.catch((error) => {
+		console.log(error);
+	});
 
 function gettingSuggestions() {
   const suggestedTextURL =
@@ -105,7 +107,7 @@ const searchingGifs = (eventObj) => {
   gettingInformation(searchQuery).then( (result)=> {
     suggestSection.style.display = 'none';
     for (let i = 0; i < trendGifContainer.children.length; i++){
-      trendGifContainer.children[i].setAttribute('src', result.data[i].images.preview_webp.url);
+      trendGifContainer.children[i].setAttribute('src', result.data[i].images.fixed_width.url);
       // trendGifContainer.children[i].style.width = '30%';
       // trendGifContainer.children[i].style.marginBottom = '10px';
     };  

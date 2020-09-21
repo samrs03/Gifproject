@@ -49,7 +49,7 @@ header nav ul li a {
   text-decoration: none;
   font-family: "Chakra Petch", sans-serif;
   font-size: 16px;
-  color: #110038;
+  color: #FFFFFF;
   letter-spacing: 0;
   line-height: 18px;
   text-align: center;
@@ -59,7 +59,7 @@ header nav ul .create-gifos,
 header nav ul .choose-theme,
 header nav ul .down-arrow {
   margin-top: 44px;
-  background: #f7c9f3;
+  background: #EE3EFE;
   border: 1px solid #110038;
   -webkit-box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
           box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
@@ -136,7 +136,7 @@ header nav .theme-options {
   width: 11.8%;
   margin-left: 72.2%;
   margin-top: 82px;
-  background: #e6e6e6;
+  background: #B4B4B4;
   -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
           box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
   height: 102px;
@@ -151,7 +151,7 @@ header nav .theme-options {
 }
 
 header nav .theme-options .theme-day {
-  background: #fff4fd;
+  background: #CCCCCC;
   border: 1px solid #cca6c9;
   -webkit-box-shadow: inset -1px -1px 0 0 #e6dce4, inset 1px 1px 0 0 #ffffff;
           box-shadow: inset -1px -1px 0 0 #e6dce4, inset 1px 1px 0 0 #ffffff;
@@ -176,6 +176,7 @@ header nav .theme-options .theme-day .day-text {
 }
 
 header nav .theme-options .theme-night {
+  background: #2E32FB;
   border: 1px solid #cca6c9;
   -webkit-box-shadow: inset -1px -1px 0 0 #e6dce4, inset 1px 1px 0 0 #ffffff;
           box-shadow: inset -1px -1px 0 0 #e6dce4, inset 1px 1px 0 0 #ffffff;
@@ -194,7 +195,7 @@ header nav .theme-options .theme-night .night-text {
   margin-left: 10%;
   font-family: "Chakra Petch", sans-serif;
   font-size: 16px;
-  color: #110038;
+  color: #FFFFFF;
   letter-spacing: 0;
   line-height: 22px;
 }
@@ -255,7 +256,7 @@ header nav .theme-options .theme-night .night-text {
 }
 
 .search-box .form-box {
-  background: #e6e6e6;
+  background: #B4B4B4;
   -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
           box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
   height: 75px;
@@ -284,7 +285,7 @@ header nav .theme-options .theme-night .night-text {
   margin-top: 18px;
   width: 7.1%;
   height: 36px;
-  background: #e6e6e6;
+  background: #B4B4B4;
   border: 1px solid #808080;
   -webkit-box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
           box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
@@ -301,7 +302,7 @@ header nav .theme-options .theme-night .night-text {
   margin-left: 5%;
   font-family: "Chakra Petch", sans-serif;
   font-size: 16px;
-  color: #b4b4b4;
+  color: #8F8F8F;
   letter-spacing: 0;
   line-height: 18px;
 }
@@ -421,25 +422,25 @@ header nav .theme-options .theme-night .night-text {
 
 .suggest .suggest-container .suggest-container-gifbox p .close-button-1 {
   position: relative;
-  left: 140px;
+  left: 170px;
   top: 1px;
 }
 
 .suggest .suggest-container .suggest-container-gifbox p .close-button-2 {
   position: relative;
-  left: 189px;
+  left: 226px;
   top: 1px;
 }
 
 .suggest .suggest-container .suggest-container-gifbox p .close-button-3 {
   position: relative;
-  left: 157px;
+  left: 184px;
   top: 1px;
 }
 
 .suggest .suggest-container .suggest-container-gifbox p .close-button-4 {
   position: relative;
-  left: 138px;
+  left: 156px;
   top: 1px;
 }
 
@@ -500,6 +501,6 @@ header nav .theme-options .theme-night .night-text {
 }
 
 body {
-  background: #FFF4FD;
+  background: #110038;
 }
 /*# sourceMappingURL=styles.css.map */
