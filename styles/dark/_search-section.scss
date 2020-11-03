@@ -42,13 +42,13 @@
       border: 1px solid #808080;
       box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
       img {
-        margin-right: 5%;
-        margin-left: 5%;
+        margin: 5% 0 0 -2%;
         color: #b4b4b4;
+        width: 50%;
+        height: 70%;
       }
       p {
         margin-top: 8%;
-        margin-left: 5%;
         font-family: $fontFamily1;
         font-size: 16px;
         color: #8F8F8F;

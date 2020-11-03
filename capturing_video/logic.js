@@ -1,8 +1,4 @@
 //Declarating variables
-//Variables
-const themeIndicator = localStorage.getItem('trueorfalse');
-const stylesTag = document.getElementById('styles-tag');
-const gifosLogo = document.getElementById("logo");
 //Sections
 const suggestSection = document.getElementById('suggest-section');
 const trendGifs = 'https://api.giphy.com/v1/gifs/trending?api_key=qsOjAmeDhQKoL3IW1Cnaty7Rayav17Ix&limit=12&rating=G';
@@ -13,6 +9,11 @@ const chooseThemeButton = document.getElementById("choose-theme-box");
 const myGifText = document.getElementById("mygif-text");
 const menuThemeTrigger = document.getElementById("down-arrow");
 const capturePNG = document.getElementById('capture-png');
+//Variables
+const themeIndicator = localStorage.getItem('trueorfalse');
+const stylesTag = document.getElementById('styles-tag');
+const gifosLogo = document.getElementById("logo");
+
 
 let thingsToHide = [
     createGifosButton,
@@ -20,6 +21,7 @@ let thingsToHide = [
     myGifText,
     menuThemeTrigger
 ];
+
 
 //Declariting functions
 async function gettingInformation(url) {
