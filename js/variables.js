@@ -1,3 +1,12 @@
+window.onload = function () {
+    let myVariable = localStorage.getItem('trueorfalse');
+    if( myVariable == 'true') {
+        darkTheme();
+    } else {
+        dayTheme();
+    }
+};
+
 const menuThemeTrigger = document.getElementById("down-arrow");
 const menuTheme = document.getElementById("theme-option");
 const sailorDay = document.getElementById("theme-day");
@@ -20,7 +29,5 @@ const searchButton = document.getElementById("search-button");
 const suggestSection = document.getElementById('suggest-section');
 const trendBox = document.getElementById('trend-box');
 const stylesTag = document.getElementById('styles-tag');
-let darkIndicator = false;
 
-
-
+let darkIndicator = false ;

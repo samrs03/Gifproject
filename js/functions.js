@@ -1,6 +1,6 @@
 async function gettingInformation(url) {
-  const testing = await fetch(url);
-  return testing.json();
+  const informationRetrieved = await fetch(url);
+  return informationRetrieved.json();
 }
 function showingMenu() {
   if (menuTheme.style.display == "none") {
@@ -14,12 +14,14 @@ function dayTheme() {
   searchButton.children[0].setAttribute('src','./asset/lupa_inactive.svg');
   gifosLogo.setAttribute("src", "./asset/gifOF_logo.png");
   darkIndicator = false;
+  localStorage.setItem('trueorfalse',darkIndicator);
 };
 function darkTheme() {
   stylesTag.setAttribute("href","./styles/dark/styles.css")
   searchButton.children[0].setAttribute('src','./asset/combined_shape.svg');
   gifosLogo.setAttribute("src", "./asset/gifOF_logo_dark.png");
   darkIndicator = true;
+  localStorage.setItem('trueorfalse',darkIndicator);
 };
 
 SuggestGifs =
