@@ -1385,9 +1385,7 @@ header nav .theme-options .theme-night .night-text {
 }
 
 .trend .trend-gifs {
-  margin-left: 6.9%;
-  margin-top: 16px;
-  margin-right: 9.8%;
+  margin: 16px 9.8% 15px 6.9%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1397,9 +1395,9 @@ header nav .theme-options .theme-night .night-text {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 body {

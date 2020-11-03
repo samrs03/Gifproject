@@ -18,12 +18,10 @@
       }
     }
     .trend-gifs {
-        margin-left: 6.9%;
-        margin-top: 16px;
-        margin-right: 9.8%;
+        margin: 16px 9.8% 15px 6.9%;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: flex-start;
     }
 }

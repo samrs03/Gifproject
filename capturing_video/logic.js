@@ -57,17 +57,17 @@ if (themeIndicator === 'true') {
 //     element.style.display = 'none';
 // });
 
-gettingInformation(trendGifs)
-	.then((result) => {
-		for (let i=0; i < trendGifContainer.children.length; i ++) {
-			trendGifContainer.children[i].setAttribute('src',result.data[i].images.fixed_width.url);
-			trendGifContainer.children[i].style.width = '30%';
-			trendGifContainer.children[i].style.marginBottom = '10px';
-		};
-	})
-	.catch((error) => {
-		console.log(error);
-	});
+// gettingInformation(trendGifs)
+// 	.then((result) => {
+// 		for (let i=0; i < trendGifContainer.children.length; i ++) {
+// 			trendGifContainer.children[i].setAttribute('src',result.data[i].images.fixed_width.url);
+// 			trendGifContainer.children[i].style.width = '30%';
+// 			trendGifContainer.children[i].style.marginBottom = '10px';
+// 		};
+// 	})
+// 	.catch((error) => {
+// 		console.log(error);
+// 	});
 
 
 
@@ -174,19 +174,7 @@ const ifSecondWindowCaptureButton = () => {
     });
     startRecording();
 };
-// function getStream () { 
-//     navigator.mediaDevices.getUserMedia({    
-//     audio: false,    
-//     video: {    
-//     height: { max: 300 }
-//     }    
-//     }).then(stream => {    
-//     initiateCamera.srcObject = stream;    
-//     initiateCamera.play()
-//     }).catch(e => {
-//         console.log(e);
-//     })
-// };
+
 async function getStream () {
     const stream = await navigator.mediaDevices.getUserMedia({
         audio: false,
@@ -325,17 +313,51 @@ const ifSixthWindowDownloadCreatedGif = async () => {
     document.body.removeChild(temporaryImage);
 
 };
-const ifSixthWindowReadyButton = () => {
-    var thingsToHide = [sixthWindow];
-    var thingsToShow = [];
+// const ifSixthWindowReadyButton = () => {
+//     var thingsToHide = [sixthWindow];
+//     var thingsToShow = [];
+//     thingsToShow.forEach(element => {
+//         element.style.display="flex";
+//     });
+//     thingsToHide.forEach(element => {
+//         element.style.display="none";
+//     });
+// };
+const gettingAndPosiblyRenderingGifsFromLocalStorage = () => {
+    var listOfGifs = []
+    var thingsToHide = [firstWindow,
+        secondWindow,
+        fourthWindow,
+        fifthWindow,
+        sixthWindow];
+    var thingsToShow = [trendSection];
     thingsToShow.forEach(element => {
-        element.style.display="flex";
+        element.style.display="inherit";
     });
     thingsToHide.forEach(element => {
         element.style.display="none";
     });
+    keys = Object.keys(localStorage);
+    i = keys.length;
+    while ( i-- ) {
+        if (keys[i].startsWith("gif\-")) {
+            listOfGifs.push(localStorage.getItem(keys[i]))
+        };
+    };
+    while(trendGifContainer.firstChild) {
+        trendGifContainer.removeChild(trendGifContainer.firstChild);
+    }
+    i = listOfGifs.length;
+    while ( i-- ) {
+        let newChild = document.createElement('img')
+        newChild.setAttribute('src',JSON.parse(listOfGifs[i]).images.original.url)
+        newChild.style.margin = '0 0 15px 3%';
+        trendGifContainer.appendChild(newChild)
+    };
+    
 };
-sixthWindowReadyButton.addEventListener('click',ifSixthWindowReadyButton);
+myGifText.addEventListener('click',gettingAndPosiblyRenderingGifsFromLocalStorage);
+sixthWindowReadyButton.addEventListener('click',gettingAndPosiblyRenderingGifsFromLocalStorage);
 sixthWindowThirdLi.addEventListener('click',ifSixthWindowDownloadCreatedGif);
 sixthWindowSecondLi.addEventListener('click',ifSixthWindowSecondLiButton);
 fourthWindowUploadCaptureButton.addEventListener('click',ifFourthWindowUploadCaptureButton);
