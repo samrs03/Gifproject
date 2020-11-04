@@ -20,10 +20,9 @@ const third_search_div = document.getElementById("third-search-div");
 const searchButton = document.getElementById("search-button");
 const suggestSection = document.getElementById('suggest-section');
 const trendBox = document.getElementById('trend-box');
-
+const trendGifs = 'https://api.giphy.com/v1/gifs/trending?api_key=qsOjAmeDhQKoL3IW1Cnaty7Rayav17Ix&limit=12&rating=G';
 const stylesTag = document.getElementById('styles-tag');
 let darkIndicator = false ;
-
 
 window.onload = function () {
     let myVariable = localStorage.getItem('trueorfalse');
@@ -41,10 +40,10 @@ const gettingInformation = async (url) => {
     return informationRetrieved.json();
   };
 const showingMenu = () => {
-if (menuTheme.style.display == "none") {
-    menuTheme.style.display = "flex";
-} else {
-    menuTheme.style.display = "none";
+    if (menuTheme.style.display == "none") {
+        menuTheme.style.display = "flex";
+    } else {
+        menuTheme.style.display = "none";
     };
 };
 const dayTheme = () => {
@@ -68,20 +67,19 @@ const SuggestOptions = ['charlie+brown','friends','joey+tribbiani','chandler+bin
 const suggestion = getRandomIndex(SuggestOptions);
 SuggestGifs = `https://api.giphy.com/v1/gifs/search?api_key=qsOjAmeDhQKoL3IW1Cnaty7Rayav17Ix&q='${SuggestOptions[suggestion]}'&limit=4&offset=0&rating=G&lang=en`;
 gettingInformation(SuggestGifs).then((result) => {
-        for (let i=0; i < suggestGifContainer.children.length; i++) {
-    if (result.data[i].title == '' ) {
-        suggestGifContainer.children[i].children[0].innerText = result.data[i].slug;
-    } else {
-        suggestGifContainer.children[i].children[0].innerText = result.data[i].title;
-    };
+    for (let i=0; i < suggestGifContainer.children.length; i++) {
+        if (result.data[i].title == '' ) {
+            suggestGifContainer.children[i].children[0].innerText = result.data[i].slug;
+        } else {
+            suggestGifContainer.children[i].children[0].innerText = result.data[i].title;
+        };
     suggestGifContainer.children[i].children[1].children[0].setAttribute('src',result.data[i].images.original.url);
     suggestGifContainer.children[i].children[1].children[0].style.width = '100%';
     suggestGifContainer.children[i].children[1].children[0].style.height = '299px';      
     };
     }).catch((error) => {
         console.log(error);
-});
-trendGifs = 'https://api.giphy.com/v1/gifs/trending?api_key=qsOjAmeDhQKoL3IW1Cnaty7Rayav17Ix&limit=12&rating=G';
+    });
 gettingInformation(trendGifs).then((result) => {
     i = result.data.length
     while( i -- ) {
@@ -95,32 +93,30 @@ gettingInformation(trendGifs).then((result) => {
     }).catch((error) => {
         console.log(error);
     });
-
 const gettingSuggestions = () => {
-const suggestedTextURL = `https://api.giphy.com/v1/gifs/search/tags?api_key=qsOjAmeDhQKoL3IW1Cnaty7Rayav17Ix&limit=2&q=${input_box.value}`;
-gettingInformation(suggestedTextURL).then((result) => {
-    if (result.data.length > 1) {
-
-        first_search.innerText = input_box.value;
-        second_search.innerText = result.data[0].name;
-        third_search.innerText = result.data[1].name;
-    } else {
-        first_search.innerText = input_box.value;
-        second_search.innerText = "No suggestions to show";
-        third_search.innerText = "No suggestions to show";
-    }
+    const suggestedTextURL = `https://api.giphy.com/v1/gifs/search/tags?api_key=qsOjAmeDhQKoL3IW1Cnaty7Rayav17Ix&limit=2&q=${input_box.value}`;
+    gettingInformation(suggestedTextURL).then((result) => {
+        if (result.data.length > 1) {
+            first_search.innerText = input_box.value;
+            second_search.innerText = result.data[0].name;
+            third_search.innerText = result.data[1].name;
+        } else {
+            first_search.innerText = input_box.value;
+            second_search.innerText = "No suggestions to show";
+            third_search.innerText = "No suggestions to show";
+        };
     }).catch((e) => {
-    console.log(e);
+        console.log(e);
     });
-}
+};
 const checkingifEmptyInput = () => {
-if (input_box.value.length == 0) {
-    searchSuggestContainer.style.display = "none";
-    if (darkIndicator == false ) {
-    dayTheme();
-    } else {
-    darkTheme();
-    };
+    if (input_box.value.length == 0) {
+        searchSuggestContainer.style.display = "none";
+        if (darkIndicator == false ) {
+            dayTheme();
+        } else {
+            darkTheme();
+        };
 } else {
     searchSuggestContainer.style.display = "flex";
     if (darkIndicator == false ) {
