@@ -55,7 +55,7 @@
         </div>
         <div class="creating-gifos-first-part" id="creating-gifos-first-part">
           <div class="creating-gifos-image-container" id="creating-gifos-image-container">
-            <img src="../asset/window img.png" alt="">
+            <img src="../asset/window_img.png" alt="">
           </div>
           <div class="creating-gifos-text-container" id="creating-gifos-text-container">
             <p>Aquí podrás crear tus propios guifos</p>
@@ -79,8 +79,8 @@
         </div>
         <div class="creating-gifos-third-part" id="creating-gifos-third-part">
           <ul class="creating-gifos-button-container">
-            <li role="button"><button type="button" class="first_button" id="first_button"><p>Cancel</p></button></li>
-            <li rolw="button"><button type="button" class="second_button" id="second_button"><p>Comenzar</p></button></li>
+            <li><div class="first_button" id="first_button"><p>Cancel</p></div></li>
+            <li><div class="second_button" id="second_button"><p>Comenzar</p></div></li>
           </ul>
         </div>
       </div>
@@ -96,8 +96,8 @@
         </div>
         <div class="capture-container" id="capture-container">
           <ul>
-            <li class="capture-png" id="capture-png" role="button"><img src="../asset/camera.svg" alt=""></li>
-            <li class="capture-text" id="capture-text" role="button"><p>Capturar</p></li>
+            <li class="capture-png" id="capture-png"><img src="../asset/camera.svg" alt=""></li>
+            <li class="capture-text" id="capture-text"><p>Capturar</p></li>
           </ul>
         </div>
         <div class="capturing-final-part" id="capturing-final-part">
@@ -106,8 +106,8 @@
           </div>
           <div class="ready-container" id="ready-container">
             <ul>
-              <li class="recording-png" id="recording-png" role="button"><img src="../asset/recording.svg" alt=""></li>
-              <li class="ready-text" id="ready-text" role="button"><p>Listo</p></li>
+              <li class="recording-png" id="recording-png"><img src="../asset/recording.svg" alt=""></li>
+              <li class="ready-text" id="ready-text"><p>Listo</p></li>
             </ul>
           </div>
         </div>
@@ -152,8 +152,8 @@
           </div>
           <div class="captured-ready-container" id="captured-ready-container">
             <ul>
-              <li class="repeat-capture" id="repeat-capture" role="button"><p>Repetir Captura</p></li>
-              <li class="uploadcapturetext" id="uploadcapturetext" role="button"><p>Subir Guifo</p></li>
+              <li class="repeat-capture" id="repeat-capture"><p>Repetir Captura</p></li>
+              <li class="uploadcapturetext" id="uploadcapturetext"><p>Subir Guifo</p></li>
             </ul>
           </div>
         </div>
@@ -195,11 +195,6 @@
           </div>
           <p class="uploading-video-text-second">Tiempo restante <span class="uploading-video-text-second-scratch">38 años</span> algunos minutos</p>
         </div>        
-        <!-- <div class="cancel-container-div" id="cancel-container-div">
-          <ul>
-            <li class="cancel-text" role="button"><p>Cancel</p></li>
-          </ul>
-        </div> -->
       </div>
     </section>
 
@@ -210,8 +205,7 @@
         </div>
           <div class="uploaded-gif-first-part" id="uploaded-gif-first-part">
             <div class="uploaded-gif-container-div" id="uploaded-gif-container-div">
-              <!-- <video class="uploaded-gif-video" id="recording-ready"></video> -->
-              <img class="uploaded-gif-video" id="recording-ready">
+              <img class="uploaded-gif-video" id="recording-ready" src="../asset/Blank.png" alt=" ">
             </div>
             <div class="uploaded-gif-multimedia" id="uploaded-gif-multimedia">
               <ul>
@@ -228,34 +222,8 @@
       </div>
       </div>
     </section>
-
-<!-- 
-    <section 
-    class = "suggest" id ="suggest-section">
-      <div class="suggest-box">
-        <h2>Hoy te sugerimos:</h2>
-      </div>
-      <div id="suggest-container" class = 'suggest-container'>
-        <div class="suggest-container-gifbox">
-            <p>#Charlie&Snoopy<img src="../asset/button3.svg" alt="" class="close-button-1"></p>        
-          <div class="suggest-gifbox-img"><img id="suggest-gif-1" src="" alt="" /><a href="">Ver más...</a></div>
-        </div>
-        <div class="suggest-container-gifbox">
-          <p>#Gansta<img src="../asset/button3.svg" alt="" class="close-button-2"></p>
-          <div class="suggest-gifbox-img"><img id="suggest-gif-2" src="" alt="" /><a href="">Ver más...</a></div>
-        </div>
-        <div class="suggest-container-gifbox">
-          <p>#CharlieUpSet<img src="../asset/button3.svg" alt="" class="close-button-3"></p>
-          <div class="suggest-gifbox-img"><img id="suggest-gif-3" src="" alt="" /><a href="">Ver más...</a></div>
-        </div>
-        <div class="suggest-container-gifbox">
-          <p>#CharlieChristmas<img src="../asset/button3.svg" alt="" class='close-button-4'></p>
-          <div class="suggest-gifbox-img"><img id="suggest-gif-4" src="" alt="" /><a href="">Ver más...</a></div>
-        </div>
-      </div>
-    </section> -->
     <section id="trend" class="trend">
-      <div class ="trend-box" id="trend-box"</div>
+      <div class ="trend-box" id="trend-box">
         <h2>Mis Guifos:</h2>
       </div>
       <div class="trend-gifs" id ="trends-gifs">
@@ -263,6 +231,5 @@
     </section>
     <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
     <script src = "../js/logic.js"></script>
-
   </body>
 </html>

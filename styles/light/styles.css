@@ -274,7 +274,7 @@ header nav .theme-options .theme-night .night-text {
   z-index: 1;
 }
 
-.search-box .form-box button {
+.search-box .form-box .search-button {
   z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -290,14 +290,14 @@ header nav .theme-options .theme-night .night-text {
           box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
 }
 
-.search-box .form-box button img {
+.search-box .form-box .search-button img {
   margin: 5% 0 0 -2%;
   color: #b4b4b4;
   width: 50%;
   height: 70%;
 }
 
-.search-box .form-box button p {
+.search-box .form-box .search-button p {
   margin-top: 8%;
   font-family: "Chakra Petch", sans-serif;
   font-size: 16px;
@@ -476,6 +476,15 @@ header nav .theme-options .theme-night .night-text {
   width: 144px;
   height: 36px;
   margin-right: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .first-video-capturing-view .creating-gifos-view .creating-gifos-third-part .creating-gifos-button-container li .first_button p {
@@ -494,6 +503,15 @@ header nav .theme-options .theme-night .night-text {
           box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
   width: 144px;
   height: 36px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .first-video-capturing-view .creating-gifos-view .creating-gifos-third-part .creating-gifos-button-container li .second_button p {
@@ -969,7 +987,7 @@ header nav .theme-options .theme-night .night-text {
 .uploading-video-section .uploading-video-container .uploading-video-div {
   width: 98%;
   height: 480px;
-  margin: 10px 0 0 1%;
+  margin: 10px 0 20px 1%;
   background: #FFFFFF;
   border: 1px solid #979797;
   -webkit-box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;

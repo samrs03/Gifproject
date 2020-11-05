@@ -48,6 +48,14 @@ const sweepingArraysWithInherit = (show,hide) => {
         element.style.display="inherit";
     });
 };
+const sweepingArraysWithFlex = (show,hide) => {
+    hide.forEach(element => {
+        element.style.display="none";
+    });
+    show.forEach(element => {
+        element.style.display="flex";
+    });
+};
 const gettingInformation = async (url) => {
     const testing = await fetch(url);
     return testing.json();
@@ -84,10 +92,10 @@ const otherToHide = () => {
         chooseThemeButton,
         myGifText,
         menuThemeTrigger
-    ]
-    var thingsToShow = [trendSection]
+    ];
+    var thingsToShow = [trendSection];
+    sweepingArraysWithInherit(thingsToShow,thingsToHide);
 };
-
 
 const ifFirstWindowCancelButton = () => {
     var thingsToShow = [createGifosButton,
@@ -97,12 +105,7 @@ const ifFirstWindowCancelButton = () => {
     trendSection
     ];
     var thingsToHide = [firstWindow];
-    thingsToShow.forEach(element => {
-        element.style.display="inherit";
-    });
-    thingsToHide.forEach(element => {
-        element.style.display="none";
-    });
+    sweepingArraysWithInherit(thingsToShow,thingsToHide);
 };
 const ifCreateGifosButton = () => {
     var thingsToShow = [firstWindow];
@@ -114,34 +117,19 @@ const ifCreateGifosButton = () => {
     chooseThemeButton,
     myGifText,
     menuThemeTrigger];
-    thingsToShow.forEach(element => {
-        element.style.display="flex";
-    });
-    thingsToHide.forEach(element => {
-        element.style.display="none";
-    });
+    sweepingArraysWithFlex(thingsToShow,thingsToHide);
 };
 const ifFirstWindowBeginButton = () => {
     var thingsToShow = [secondWindow];
     var thingsToHide = [firstWindow,captureContainerFinalPart];
     captureContainer.style.display = 'inherit';
-    thingsToShow.forEach(element => {
-        element.style.display="flex";
-    });
-    thingsToHide.forEach(element => {
-        element.style.display="none";
-    });
+    sweepingArraysWithFlex(thingsToShow,thingsToHide);
     getStream();
 };
 const ifSecondWindowCaptureButton = () => {
     var thingsToShow = [captureContainerFinalPart];
     var thingsToHide = [captureContainer];
-    thingsToShow.forEach(element => {
-        element.style.display="flex";
-    });
-    thingsToHide.forEach(element => {
-        element.style.display="none";
-    });
+    sweepingArraysWithFlex(thingsToShow,thingsToHide);
     startRecording();
 };
 
@@ -201,12 +189,7 @@ const stopRecording = async () => {
 const ifThirdWindowReadyButton = () => {
     var thingsToShow = [ fourthWindow ];
     var thingsToHide = [ secondWindow ];
-    thingsToShow.forEach(element => {
-        element.style.display="flex";
-    });
-    thingsToHide.forEach(element => {
-        element.style.display="none";
-    });
+    sweepingArraysWithFlex(thingsToShow,thingsToHide);
     stopRecording();
 };
 
@@ -217,12 +200,7 @@ const playingAgain = () => {
 const ifRepeatingCapture = () => {
     var thingsToShow = [secondWindow,captureContainerFinalPart];
     var thingsToHide = [fourthWindow];
-    thingsToShow.forEach(element => {
-        element.style.display="flex";
-    });
-    thingsToHide.forEach(element => {
-        element.style.display="none";
-    });
+    sweepingArraysWithFlex(thingsToShow,thingsToHide);
     getStream();
     startRecording();
 };
@@ -283,16 +261,6 @@ const ifSixthWindowDownloadCreatedGif = async () => {
     document.body.removeChild(temporaryImage);
 
 };
-// const ifSixthWindowReadyButton = () => {
-//     var thingsToHide = [sixthWindow];
-//     var thingsToShow = [];
-//     thingsToShow.forEach(element => {
-//         element.style.display="flex";
-//     });
-//     thingsToHide.forEach(element => {
-//         element.style.display="none";
-//     });
-// };
 const gettingAndRenderingGifsFromLocalStorage = () => {
     var listOfGifs = []
     var thingsToHide = [firstWindow,
@@ -301,12 +269,7 @@ const gettingAndRenderingGifsFromLocalStorage = () => {
         fifthWindow,
         sixthWindow];
     var thingsToShow = [trendSection];
-    thingsToShow.forEach(element => {
-        element.style.display="inherit";
-    });
-    thingsToHide.forEach(element => {
-        element.style.display="none";
-    });
+    sweepingArraysWithInherit(thingsToShow,thingsToHide);
     keys = Object.keys(localStorage);
     i = keys.length;
     while ( i-- ) {
@@ -354,25 +317,6 @@ if (themeIndicator === 'true') {
 };
 otherToHide();
 onlyOneTime();
-
-
-// thingsToHide.forEach(element => {
-//     element.style.display = 'none';
-// });
-
-// gettingInformation(trendGifs)
-// 	.then((result) => {
-// 		for (let i=0; i < trendGifContainer.children.length; i ++) {
-// 			trendGifContainer.children[i].setAttribute('src',result.data[i].images.fixed_width.url);
-// 			trendGifContainer.children[i].style.width = '30%';
-// 			trendGifContainer.children[i].style.marginBottom = '10px';
-// 		};
-// 	})
-// 	.catch((error) => {
-// 		console.log(error);
-// 	});
-
-
 
 //Listeners
 myGifText.addEventListener('click',gettingAndRenderingGifsFromLocalStorage);
