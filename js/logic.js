@@ -1,82 +1,16 @@
 //Declarating variables
-//Sections
 const suggestSection = document.getElementById('suggest-section');
 const trendGifs = 'https://api.giphy.com/v1/gifs/trending?api_key=qsOjAmeDhQKoL3IW1Cnaty7Rayav17Ix&limit=12&rating=G';
+const menuThemeTrigger = document.getElementById("down-arrow");
 const trendGifContainer = document.getElementById("trends-gifs");
-//buttons
+const menuTheme = document.getElementById("theme-option");
 const createGifosButton = document.getElementById("create-gifos-box");
 const chooseThemeButton = document.getElementById("choose-theme-box");
 const myGifText = document.getElementById("mygif-text");
-const menuThemeTrigger = document.getElementById("down-arrow");
 const capturePNG = document.getElementById('capture-png');
-//Variables
 const themeIndicator = localStorage.getItem('trueorfalse');
 const stylesTag = document.getElementById('styles-tag');
 const gifosLogo = document.getElementById("logo");
-
-
-let thingsToHide = [
-    createGifosButton,
-    chooseThemeButton,
-    myGifText,
-    menuThemeTrigger
-];
-
-
-//Declariting functions
-async function gettingInformation(url) {
-    const testing = await fetch(url);
-    return testing.json();
-  };
-
-function dayTheme() {
-    stylesTag.setAttribute('href','../styles/light/styles.css');
-    gifosLogo.setAttribute("src", "../asset/gifOF_logo.png");
-    capturePNG.setAttribute('src','../asset/camera.svg');
-    darkIndicator = false;
-    localStorage.setItem('trueorfalse',darkIndicator);
-  };
-  function darkTheme() {
-    stylesTag.setAttribute("href","../styles/dark/styles.css")
-    gifosLogo.setAttribute("src", "../asset/gifOF_logo_dark.png");
-    // capturePNG.setAttribute('src','../asset/camera_light.svg');
-    // we need to check thisss"!!!!!!
-    darkIndicator = true;
-    localStorage.setItem('trueorfalse',darkIndicator);
-  };
-
-
-
-
-//First time Logic  
-if (themeIndicator === 'true') {
-    darkTheme();
-} else {
-    dayTheme();
-};
-
-// thingsToHide.forEach(element => {
-//     element.style.display = 'none';
-// });
-
-// gettingInformation(trendGifs)
-// 	.then((result) => {
-// 		for (let i=0; i < trendGifContainer.children.length; i ++) {
-// 			trendGifContainer.children[i].setAttribute('src',result.data[i].images.fixed_width.url);
-// 			trendGifContainer.children[i].style.width = '30%';
-// 			trendGifContainer.children[i].style.marginBottom = '10px';
-// 		};
-// 	})
-// 	.catch((error) => {
-// 		console.log(error);
-// 	});
-
-
-
-//Listeners
-
-
-
 const firstWindow = document.getElementById('first-video-capturing-view');
 const secondWindow = document.getElementById('preview');
 const captureContainer = document.getElementById('capture-container');
@@ -85,7 +19,6 @@ const fourthWindow = document.getElementById('captured-gif');
 const fifthWindow = document.getElementById('uploading-video-section');
 const sixthWindow = document.getElementById('uploaded-gif-section');
 const trendSection = document.getElementById('trend');
-
 const firstWindowCancelButton = document.getElementById('first_button');
 const firstWindowBeginButton = document.getElementById('second_button');
 const secondWindowCaptureButton = document.getElementById('capture-text');
@@ -96,30 +29,65 @@ const fourthWindowForwardButton = document.getElementById('forward-container');
 const sixthWindowReadyButton = document.getElementById('uploaded-gif-ready-button');
 const sixthWindowSecondLi = document.getElementById('second-li');
 const sixthWindowThirdLi = document.getElementById('third-li');
-
-
 const initiateCamera = document.getElementById('initiate-camera');
 const readyRecording = document.getElementById('recording-ready');
 const outputRecording = document.getElementById('stop-recording');
-
+const sailorDay = document.getElementById("theme-day");
+const sailorNight = document.getElementById("theme-night");
 let gifRecorder;
 let videoRecorder;
 let gifSrc;
 let gifID;
 
-//The part below needs to be adapted
+//Declariting functions
+const sweepingArraysWithInherit = (show,hide) => {
+    hide.forEach(element => {
+        element.style.display="none";
+    });
+    show.forEach(element => {
+        element.style.display="inherit";
+    });
+};
+const gettingInformation = async (url) => {
+    const testing = await fetch(url);
+    return testing.json();
+};
+const showingMenu = () => {
+    if (menuTheme.style.display == "none") {
+        menuTheme.style.display = "flex";
+    } else {
+        menuTheme.style.display = "none";
+    };
+};
+const dayTheme = () => {
+    stylesTag.setAttribute('href','../styles/light/styles.css');
+    gifosLogo.setAttribute("src", "../asset/gifOF_logo.png");
+    capturePNG.setAttribute('src','../asset/camera.svg');
+    darkIndicator = false;
+    localStorage.setItem('trueorfalse',darkIndicator);
+};
+const darkTheme = () => {
+    stylesTag.setAttribute("href","../styles/dark/styles.css")
+    gifosLogo.setAttribute("src", "../asset/gifOF_logo_dark.png");
+    // capturePNG.setAttribute('src','../asset/camera_light.svg');
+    // we need to check thisss"!!!!!!
+    darkIndicator = true;
+    localStorage.setItem('trueorfalse',darkIndicator);
+};
 const otherToHide = () => {
     var thingsToHide = [
         secondWindow,
         fourthWindow,
         fifthWindow,
-        sixthWindow
+        sixthWindow,
+        createGifosButton,
+        chooseThemeButton,
+        myGifText,
+        menuThemeTrigger
     ]
-    thingsToHide.forEach(element => {
-        element.style.display="none";
-    });
+    var thingsToShow = [trendSection]
 };
-otherToHide();
+
 
 const ifFirstWindowCancelButton = () => {
     var thingsToShow = [createGifosButton,
@@ -177,7 +145,7 @@ const ifSecondWindowCaptureButton = () => {
     startRecording();
 };
 
-async function getStream () {
+const getStream = async () => {
     const stream = await navigator.mediaDevices.getUserMedia({
         audio: false,
         video: {
@@ -187,7 +155,7 @@ async function getStream () {
     initiateCamera.srcObject = stream;
     await initiateCamera.play();
 };
-async function startRecording () {
+const startRecording = async () => {
     const stream = initiateCamera.srcObject;
     videoRecorder = new RecordRTCPromisesHandler(stream, {
         type: "video",
@@ -211,7 +179,7 @@ async function startRecording () {
     await videoRecorder.startRecording();
     videoRecorder.stream = stream;
 }
-async function stopRecording () {
+const stopRecording = async () => {
     await gifRecorder.stopRecording();
     await videoRecorder.stopRecording();
     const videoBlob = await videoRecorder.getBlob();
@@ -290,7 +258,7 @@ const ifFourthWindowUploadCaptureButton = () => {
         savingGifInLocalStorage(data.data.id);
     }).catch(e => {
         console.log(e + "error"); 
-    })
+    });
 };
 const ifSixthWindowSecondLiButton = () => {
     const tempElement = document.createElement("textarea");
@@ -325,7 +293,7 @@ const ifSixthWindowDownloadCreatedGif = async () => {
 //         element.style.display="none";
 //     });
 // };
-const gettingAndPosiblyRenderingGifsFromLocalStorage = () => {
+const gettingAndRenderingGifsFromLocalStorage = () => {
     var listOfGifs = []
     var thingsToHide = [firstWindow,
         secondWindow,
@@ -355,11 +323,60 @@ const gettingAndPosiblyRenderingGifsFromLocalStorage = () => {
         newChild.setAttribute('src',JSON.parse(listOfGifs[i]).images.original.url)
         newChild.style.margin = '0 0 15px 3%';
         trendGifContainer.appendChild(newChild)
-    };
-    
+    };    
 };
-myGifText.addEventListener('click',gettingAndPosiblyRenderingGifsFromLocalStorage);
-sixthWindowReadyButton.addEventListener('click',gettingAndPosiblyRenderingGifsFromLocalStorage);
+const onlyOneTime = () => {
+    listOfGifs = [];
+    keys = Object.keys(localStorage);
+    i = keys.length;
+    while ( i-- ) {
+        if (keys[i].startsWith("gif\-")) {
+            listOfGifs.push(localStorage.getItem(keys[i]))
+        };
+    };
+    while(trendGifContainer.firstChild) {
+        trendGifContainer.removeChild(trendGifContainer.firstChild);
+    }
+    i = listOfGifs.length;
+    while ( i-- ) {
+        let newChild = document.createElement('img')
+        newChild.setAttribute('src',JSON.parse(listOfGifs[i]).images.original.url)
+        newChild.style.margin = '0 0 15px 3%';
+        trendGifContainer.appendChild(newChild)
+    }; 
+};
+
+//First time Logic  
+if (themeIndicator === 'true') {
+    darkTheme();
+} else {
+    dayTheme();
+};
+otherToHide();
+onlyOneTime();
+
+
+// thingsToHide.forEach(element => {
+//     element.style.display = 'none';
+// });
+
+// gettingInformation(trendGifs)
+// 	.then((result) => {
+// 		for (let i=0; i < trendGifContainer.children.length; i ++) {
+// 			trendGifContainer.children[i].setAttribute('src',result.data[i].images.fixed_width.url);
+// 			trendGifContainer.children[i].style.width = '30%';
+// 			trendGifContainer.children[i].style.marginBottom = '10px';
+// 		};
+// 	})
+// 	.catch((error) => {
+// 		console.log(error);
+// 	});
+
+
+
+//Listeners
+myGifText.addEventListener('click',gettingAndRenderingGifsFromLocalStorage);
+sixthWindowReadyButton.addEventListener('click',gettingAndRenderingGifsFromLocalStorage);
 sixthWindowThirdLi.addEventListener('click',ifSixthWindowDownloadCreatedGif);
 sixthWindowSecondLi.addEventListener('click',ifSixthWindowSecondLiButton);
 fourthWindowUploadCaptureButton.addEventListener('click',ifFourthWindowUploadCaptureButton);
@@ -370,3 +387,6 @@ secondWindowCaptureButton.addEventListener('click',ifSecondWindowCaptureButton);
 firstWindowBeginButton.addEventListener('click',ifFirstWindowBeginButton);
 createGifosButton.addEventListener('click',ifCreateGifosButton);
 firstWindowCancelButton.addEventListener('click',ifFirstWindowCancelButton);
+menuThemeTrigger.addEventListener("click", showingMenu);
+sailorDay.addEventListener("click", dayTheme);
+sailorNight.addEventListener("click", darkTheme);

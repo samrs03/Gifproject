@@ -63,7 +63,17 @@ const darkTheme = () => {
 const getRandomIndex = (array) => {
     return Math.floor(Math.random() * array.length);
 };
-const SuggestOptions = ['charlie+brown','friends','joey+tribbiani','chandler+bing','the+killers','RHCP','blink+182','rammstein'];
+const SuggestOptions = [ 'charlie+brown',
+'phoebe+buffay',
+'rachel+green',
+'monica+geller',
+'ross+geller',
+'joey+tribbiani',
+'chandler+bing',
+'the+killers',
+'RHCP',
+'blink+182',
+'rammstein' ];
 const suggestion = getRandomIndex(SuggestOptions);
 SuggestGifs = `https://api.giphy.com/v1/gifs/search?api_key=qsOjAmeDhQKoL3IW1Cnaty7Rayav17Ix&q='${SuggestOptions[suggestion]}'&limit=4&offset=0&rating=G&lang=en`;
 gettingInformation(SuggestGifs).then((result) => {
