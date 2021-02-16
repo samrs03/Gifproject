@@ -1,4 +1,17 @@
 $defaultFontSize: 12px;
-$headerGradient1: #4180F6;
-$headerGradient2: #F7C9F3;
-$fontFamily1: 'Chakra Petch', sans-serif;
+$headerGradient1: #4180f6;
+$headerGradient2: #f7c9f3;
+$fontFamily1: "Chakra Petch", sans-serif;
+
+.auxiliar-class {
+  background-image: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
+  box-shadow: 0 1px 0 0 #110038;
+  position: relative;
+  display: inherit;
+
+  top: -10px;
+}
+
+.auxiliar-class-hidden {
+  display: none;
+}

@@ -1,0 +1,20 @@
+.history-section {
+    margin: 10px 0 0 6.9%;
+    .history-div-container {
+      display: flex;
+      flex-direction: row;
+      .children {
+        min-width: 5%;
+        min-height: 24px;
+        background: #EE3EFE;
+        border: 1px solid #4c2f99;
+        box-shadow: inset -2px -2px 0 0 #284f99, inset 2px 2px 0 0 #ffffff;
+        margin: 0 1% 0 0;
+        .children-text {
+          text-align: center;
+          margin-top: 10%;
+          color: white;
+        }
+      }
+    }
+  }

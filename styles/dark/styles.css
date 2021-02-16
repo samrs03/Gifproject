@@ -1,3 +1,17 @@
+.auxiliar-class {
+  background-image: -webkit-gradient(linear, right top, left top, from(#f7c9f3), to(#4180f6));
+  background-image: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
+  -webkit-box-shadow: 0 1px 0 0 #110038;
+          box-shadow: 0 1px 0 0 #110038;
+  position: relative;
+  display: inherit;
+  top: -10px;
+}
+
+.auxiliar-class-hidden {
+  display: none;
+}
+
 * {
   padding: 0;
   border: none;
@@ -1416,6 +1430,36 @@ header nav .theme-options .theme-night .night-text {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+}
+
+.history-section {
+  margin: 10px 0 0 6.9%;
+}
+
+.history-section .history-div-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.history-section .history-div-container .children {
+  min-width: 5%;
+  min-height: 24px;
+  background: #EE3EFE;
+  border: 1px solid #4c2f99;
+  -webkit-box-shadow: inset -2px -2px 0 0 #284f99, inset 2px 2px 0 0 #ffffff;
+          box-shadow: inset -2px -2px 0 0 #284f99, inset 2px 2px 0 0 #ffffff;
+  margin: 0 1% 0 0;
+}
+
+.history-section .history-div-container .children .children-text {
+  text-align: center;
+  margin-top: 10%;
+  color: white;
 }
 
 body {
